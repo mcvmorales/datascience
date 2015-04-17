@@ -1,6 +1,6 @@
 Reading from the Web
 ====================
-We will focus on scraping data from websites, working with APIs, and authentication.
+We will focus on scraping data from websites and authentication.
 
 **Web scraping** is a computer software technique of extracting information from websites. Read about [How Netflix Reverse Engineered Hollywood](http://www.theatlantic.com/technology/archive/2014/01/how-netflix-reverse-engineered-hollywood/282679/).
 
