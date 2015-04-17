@@ -61,5 +61,5 @@ We should use handles to use across authentication processes (through cookies). 
     
 Further Resources
 -----------------
-**{httr}** package: http://cran.r-project.org/web/packages/httr/httr.pdf
+**{httr}** package: http://cran.r-project.org/web/packages/httr/httr.pdf  
 **R Bloggers** | Web scraping: http://www.r-bloggers.com/search/web+scraping
