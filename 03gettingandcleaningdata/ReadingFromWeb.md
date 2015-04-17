@@ -55,6 +55,7 @@ Our successful response is as follows:
 Using Handles
 -------------
 We should use handles to use across authentication processes (through cookies). For example:
+
     google = handle("http://www.google.com")
     pg1 = GET(handle = google, path = "/")
     pg2 = GET(handle = google, path = "search")
