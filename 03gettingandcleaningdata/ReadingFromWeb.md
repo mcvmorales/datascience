@@ -1,4 +1,4 @@
-Reading From the Web
+Reading from the Web
 ====================
 We will focus on scraping data from websites, working with APIs, and authentication.
 
