@@ -1,6 +1,6 @@
 # Data Science
 This repository contains lecture notes and assignments from Coursera's Data Science certification classes.
 
-Taught online by
-Jeff Leek, Brian Caffo, and Roger D. Peng of the Biostatistics Department
-at John Hopkins University in Baltimore, Maryland.
+<a href="https://www.coursera.org/specialization/jhudatascience/1/courses">
+Data Science Certification | Coursera & John Hopkins University
+</a>
