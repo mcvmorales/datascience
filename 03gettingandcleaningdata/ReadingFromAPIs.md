@@ -27,4 +27,4 @@ Meanwhile, `json2[1, 1:4]` displays a data frame, showing the first row and the 
 
 Further Resources
 -----------------
-Twitter Developers | REST APIs: https://dev.twitter.com/docs/api/1.1/overview
+**Twitter Developers** | REST APIs: https://dev.twitter.com/docs/api/1.1/overview
