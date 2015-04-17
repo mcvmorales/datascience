@@ -1,29 +1,65 @@
-<h1>Reading From the Web</h1>
+Reading From the Web
+====================
+We will focus on scraping data from websites, working with APIs, and authentication.
 
-<p>We will focus on scraping data from websites, working with APIs, and authentication.</p>
+**Web scraping** is a computer software technique of extracting information from websites. Read about [How Netflix Reverse Engineered Hollywood](http://www.theatlantic.com/technology/archive/2014/01/how-netflix-reverse-engineered-hollywood/282679/).
 
-<p><strong>Web scraping</strong> is a computer software technique of extracting information from websites. Read about <a href="http://www.theatlantic.com/technology/archive/2014/01/how-netflix-reverse-engineered-hollywood/282679/">How Netflix Reverse Engineered Hollywood</a>.</p>
+Getting Data from Webpages -- `readLines()`
+---------------------------------------------
+    con = url("http://scholar.google.com/citations?user=HI-I6C0AAAAJ&hl=en")  
+    htmlCode = readLines(con)  
+    close(con)
 
-<h2>Getting Data Off of Webpages -- <code>readLines()</code></h2>
+Parsing with XML
+----------------
+    url <- "http://scholar.google.com/citations?user=HI-I6C0AAAAJ&hl=en"
+    html <- htmlTreeParse(url, useInternalNodes = T)
 
-<p><code>R
-con = url("http://scholar.google.com/citations?user=HI-I6C0AAAAJ&amp;hl=en") <br />
-htmlCode = readLines(con) <br />
-close(con)
-</code></p>
+    xpathSApply(html, "//title", xmlValue)
 
-<h2>Parsing with XML</h2>
+    xpathSApply(html, "//td[@id='col-citedby']", xmlValue)
 
-<p><code>R
-url &lt;- "http://scholar.google.com/citations?user=HI-I6C0AAAAJ&amp;hl=en"
-html &lt;- htmlTreeParse(url, useInternalNodes = T)
-</code></p>
+`GET` from {httr}
+-------------------
+    library(httr); html2 = GET(url)
+    content2 = content(html2, as = "text")
+    parsedHTML = htmlParse(content2, asText = TRUE)
+    xpathSApply(parsedHTML, "//title", xmlValue)
 
-<p><code>R
-xpathSApply(html, "//title", xmlValue)
-</code></p>
+Accessing Websites with Passwords
+---------------------------------
+    pg1 = GET("http://httpbin.org/basic-auth/user/passwd")
+    pg1
 
-<p><code>R
-xpathSApply(html, "//td[@id='col-citedby']", xmlValue)
-</code></p>
+Since we did not specify a username and password, we are returned the following message:
 
+    Response [http://httpbin.org/basic-auth/user/passwd]
+      Status: 401
+      Content-type:
+
+To access a website that requires a username and password, use `authenticate()`.
+
+    pg2 = GET("http://httpbin.org/basic-auth/user/passwd"),
+	          authenticate("user", "password"))
+    pg2
+
+Our successful response is as follows:
+    Response [http://httpbin.org/basic-auth/user/passwd]
+      Status: 200
+      Content-type: application/ json
+    {
+      "authenticated": true,
+      "user": "user"
+    }
+
+Using Handles
+-------------
+We should use handles to use across authentication processes (through cookies). For example:
+    google = handle("http://www.google.com")
+    pg1 = GET(handle = google, path = "/")
+    pg2 = GET(handle = google, path = "search")
+    
+Further Resources
+-----------------
+**{httr}** package: http://cran.r-project.org/web/packages/httr/httr.pdf
+**R Bloggers** | Web scraping: http://www.r-bloggers.com/search/web+scraping
