@@ -11,6 +11,7 @@ The lattice plotting system is implemented using the following packages:
 * **{lattice}** contains code for producing Trellis graphics, which uses
   functions such as `xyplot`, `bwplot`, and `levelplot`
 * **{grid}**, on which the **{lattice}** package builds upon
+
 Both packages are independent of the **{base}** graphics system.
 All plotting and annotation is done at once with a single function call.
 
@@ -24,9 +25,11 @@ Lattice Functions
 * `splom`: scatterplot matrix (similar to `pairs` in **{base}**)
 * `levelplot`, `contourplot`: for plotting "image" data (i.e. maps)
 
-Lattice functions take a formula for their first argument, usually of the form
+Lattice functions take a formula for their first argument, usually of the form:
+
     xyplot(y ~ x | f * g, data)
     # "I want to look at the scatterplot of y on x, for every level f and g
+
 * `~` can be interpreted as "depends on"
 * `y` represents the y-axis variable; `x` represents the x-axis variable
 * `f` and `g` are optional *conditioning variables*
@@ -52,6 +55,7 @@ Now we can observe the ozone versus the wind, month by month!
 Lattice Behavior
 ----------------
 There are a few quirks to the **{lattice}** package:
+
     p <- xyplot(Ozone ~ Wind, data = airquailty) # nothing happens
     print(p) # plot is displayed
 
@@ -61,5 +65,7 @@ Compare this situation to the following:
     
 ### Further Resources
 [{lattice} | CRAN] (http://cran.r-project.org/web/packages/lattice/lattice.pdf)
+
 [Lattice Graphs | Quick R] (http://www.statmethods.net/advgraphs/trellis.html)
+
 [Lattice: Multivariate Data Visualization with R] (http://www.springer.com/us/book/9780387759685)
