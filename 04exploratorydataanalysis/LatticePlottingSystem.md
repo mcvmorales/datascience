@@ -1,6 +1,6 @@
 Lattice Plotting System
 =======================
-The lattice plotting system in R is different from the base plotting system.
+The **{lattice}** plotting system in R is different from the **{base}** plotting system.
 It is useful for plotting high-dimensional data and making many plots at once.
 
 In the base plotting system, we are able to use functions like `mfrow()` and
