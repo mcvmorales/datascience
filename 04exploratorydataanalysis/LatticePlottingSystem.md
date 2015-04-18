@@ -43,8 +43,6 @@ Simple Lattice Plots
 
 <img src = "https://github.com/mcvmorales/datascience/blob/master/04exploratorydataanalysis/figures/xyplot1.png">
 
-    library(lattice)
-    library(datasets)
     airquality <- transform(airquality, Month = factor(Month)) # converts "Month" to factor variable
     xyplot(Ozone ~ Wind | Month, data = airquality, layout = c(5, 1))
 
