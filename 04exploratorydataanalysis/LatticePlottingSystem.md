@@ -66,9 +66,7 @@ objects are auto-printed.
 
 The package also contains a `panel()` function, which controls the contents 
 inside each panel of the plot. For example:
-    
-    library(lattice)
-    library(datasets)
+
     set.seed(10)
     x <- rnorm(100)
     f <- rep(0:1, each = 50)
