@@ -100,6 +100,11 @@ We can also add a regression line. Note that `panel.lmline(x, y)` is equivalent 
 
 <img src = "https://github.com/mcvmorales/datascience/blob/master/04exploratorydataanalysis/figures/xyplot5.png">
 
+**{lattice}** plots are constructed with a single function call to a core lattice function.
+Aspects such as margins and spacing are already taken care of, with defaults usually sufficient.
+The **{lattice}** system is ideal for creating conditioning plots (for observing multiple conditions 
+simultaneously). Remember to use `panel` functions to modify what is plotted in each panel.
+
 ### Further Resources
 [{lattice} | CRAN] (http://cran.r-project.org/web/packages/lattice/lattice.pdf)
 
