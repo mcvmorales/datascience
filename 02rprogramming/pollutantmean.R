@@ -2,7 +2,10 @@ fileurl <- "https://d396qusza40orc.cloudfront.net/rprog%2Fdata%2Fspecdata.zip"
 download.file(fileurl, destfile = "./specdata.zip")
 unzip("./specdata.zip")
 
-data <- ("./specdata/")
+# Acceptable values:
+# directory: "specdata"
+# pollutant: "sulfate", "nitrate"
+# id:        an integer or integer range in 1:332
 
 pollutantmean <- function(directory, pollutant, id = 1:332) {
         all <- list.files(directory, full.names = TRUE)
