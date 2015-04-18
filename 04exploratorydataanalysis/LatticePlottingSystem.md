@@ -63,9 +63,42 @@ Compare this situation to the following:
 
     xyplot(Ozone ~ Wind, data = airquality) # plot auto-prints
     
+**{lattice}** graphics functions return an object of class *trellis*; on the command line, trellis 
+objects are auto-printed.
+
+The package also contains a `panel()` function, which controls the contents 
+inside each panel of the plot. For example:
+    
+    library(lattice)
+    library(datasets)
+    set.seed(10)
+    x <- rnorm(100)
+    f <- rep(0:1, each = 50)
+    y <- x + f - f * x + rnorm(100, sd = 0.5)
+    f <- factor(f, labels = c("Group 1", "Group 2"))
+    xyplot (y ~ x | f, layout = c(2, 1)) # a 2 x 1 paneled plot
+
+<img src = "https://github.com/mcvmorales/datascience/blob/master/04exploratorydataanalysis/figures/xyplot3.png">
+
+Using the custom `panel` functions:
+
+    library(lattice)
+    library(datasets)
+    xyplot(y ~ x | f, panel = function(x, y, ...) {
+           panel.xyplot(x, y, ...)
+           panel.abline(h = median(y), lty = 2)
+    })
+
+<img src = "https://github.com/mcvmorales/datascience/blob/master/04exploratorydataanalysis/figures/xyplot4.png">
+
+In the third line, we call the default panel for `xyplot`. We then add a horizontal line at the median, of line
+type 2 (dashed line).
+
 ### Further Resources
 [{lattice} | CRAN] (http://cran.r-project.org/web/packages/lattice/lattice.pdf)
 
 [Lattice Graphs | Quick R] (http://www.statmethods.net/advgraphs/trellis.html)
 
 [Lattice: Multivariate Data Visualization with R] (http://www.springer.com/us/book/9780387759685)
+
+[Line Style Arguments for R Graphics] (http://students.washington.edu/mclarkso/documents/line%20styles%20Ver2.pdf)
