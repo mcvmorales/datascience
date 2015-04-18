@@ -30,7 +30,7 @@ Lattice functions take a formula for their first argument, usually of the form:
     xyplot(y ~ x | f * g, data)
     # "I want to look at the scatterplot of y on x, for every level f and g
 
-* `~` can be interpreted as "depends on"
+* `~` can be interpreted as "depends on" or "in relation to"
 * `y` represents the y-axis variable; `x` represents the x-axis variable
 * `f` and `g` are optional *conditioning variables*
 * `data` is the data frame from which `x`, `y`, `f`, and `g` can be found
