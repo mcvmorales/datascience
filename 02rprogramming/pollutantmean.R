@@ -2,7 +2,8 @@ fileurl <- "https://d396qusza40orc.cloudfront.net/rprog%2Fdata%2Fspecdata.zip"
 download.file(fileurl, destfile = "./specdata.zip")
 unzip("./specdata.zip")
 
-# Acceptable values:
+# Acceptable values
+# -----------------
 # directory: "specdata"
 # pollutant: "sulfate", "nitrate"
 # id:        an integer or integer range in 1:332
