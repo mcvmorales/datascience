@@ -47,7 +47,7 @@ Simple Lattice Plots
     library(datasets)
     airquality <- transform(airquality, Month = factor(Month)) # converts "Month" to factor variable
     xyplot(Ozone ~ Wind | Month, data = airquality, layout = c(5, 1))
-    
+
 <img src = "https://github.com/mcvmorales/datascience/blob/master/04exploratorydataanalysis/figures/xyplot2.png">
 
 Now we can observe the ozone versus the wind, month by month!
@@ -82,23 +82,29 @@ inside each panel of the plot. For example:
 
 Using the custom `panel` functions:
 
-    library(lattice)
-    library(datasets)
     xyplot(y ~ x | f, panel = function(x, y, ...) {
-           panel.xyplot(x, y, ...)
-           panel.abline(h = median(y), lty = 2)
+        panel.xyplot(x, y, ...)
+        panel.abline(h = median(y), lty = 2)
     })
 
 <img src = "https://github.com/mcvmorales/datascience/blob/master/04exploratorydataanalysis/figures/xyplot4.png">
 
-In the third line, we call the default panel for `xyplot`. We then add a horizontal line at the median, of line
+First, we call the default panel for `xyplot`. We then add a horizontal line at the median, of line
 type 2 (dashed line).
+
+We can also add a regression line. Note that `panel.lmline(x, y)` is equivalent to `panel.abline(lm(y ~ x)).`
+
+    xyplot(y ~ x | f, panel = function(x, y, ...) {
+        panel.xyplot(x, y, ...)
+        panel.lmline(x, y, col = 2)
+
+<img src = "https://github.com/mcvmorales/datascience/blob/master/04exploratorydataanalysis/figures/xyplot5.png">
 
 ### Further Resources
 [{lattice} | CRAN] (http://cran.r-project.org/web/packages/lattice/lattice.pdf)
 
+[Line Style Arguments for R Graphics] (http://students.washington.edu/mclarkso/documents/line%20styles%20Ver2.pdf)
+
 [Lattice Graphs | Quick R] (http://www.statmethods.net/advgraphs/trellis.html)
 
 [Lattice: Multivariate Data Visualization with R] (http://www.springer.com/us/book/9780387759685)
-
-[Line Style Arguments for R Graphics] (http://students.washington.edu/mclarkso/documents/line%20styles%20Ver2.pdf)
