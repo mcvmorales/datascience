@@ -1,0 +1,17 @@
+{
+    "contents" : "library(ggplot2)\nstr(mpg)\n\npng(\"./04exploratorydataanalysis/figures/ggplot1.png\",\n    width = 480, height = 300)\n# qplot(x-coord, y-coord, dataframe)\nqplot(displ, hwy, data = mpg)\ndev.off()\n",
+    "created" : 1429741040831.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "1216140293",
+    "id" : "34F2E1E1",
+    "lastKnownWriteTime" : 128226416,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

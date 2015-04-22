@@ -1,0 +1,17 @@
+{
+    "contents" : "library(lattice)\nlibrary(datasets)\npng(\"./04exploratorydataanalysis/figures/xyplot3.png\", width = 600, height = 300)\nset.seed(10)\nx <- rnorm(100)\nf <- rep(0:1, each = 50)\ny <- (x + f) - (f * x) + rnorm(100, sd = 0.5)\nf <- factor(f, labels = c(\"Group 1\", \"Group 2\"))\nxyplot(y ~ x | f, layout = c(2, 1)) # a 2 x 1 paneled plot\ndev.off()\n\npng(\"./04exploratorydataanalysis/figures/xyplot4.png\", width = 600, height = 300)\nlibrary(lattice)\nlibrary(datasets)\nxyplot(y ~ x | f, panel = function(x, y, ...) {\n        panel.xyplot(x, y, ...)\n        panel.abline(h = median(y), lty = 2)\n})\ndev.off()\n\npng(\"./04exploratorydataanalysis/figures/xyplot5.png\", width = 600, height = 300)\nlibrary(lattice)\nlibrary(datasets)\nxyplot(y ~ x | f, panel = function(x, y, ...) {\n        panel.xyplot(x, y, ...)\n        panel.lmline(x, y, col = 2)\n})\ndev.off()",
+    "created" : 1429334072786.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "1657375890",
+    "id" : "9B02CC71",
+    "lastKnownWriteTime" : 0,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
