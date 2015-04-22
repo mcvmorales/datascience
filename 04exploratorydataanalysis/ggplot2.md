@@ -62,6 +62,6 @@ Observe:
 <img src = "https://github.com/mcvmorales/datascience/blob/master/04exploratorydataanalysis/figures/ggplot6.png">
 
 ### Further Resources
-(http://www.ggplot2.com)
+http://www.ggplot2.com
 
 [Mouse Allergen and Ashthma Cohort Study (MAACS)] (http://goo.gl/WqE9j8)
