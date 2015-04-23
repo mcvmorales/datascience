@@ -10,6 +10,16 @@ from data to aesthetic attributes (color, shape, size) of geometric
 objects (points, lines, bars). The plot may also contain statistical transformations 
 of the data and is drawn on a specific coordinate system."
 
+Basic Componenets of a {ggplot2} Plot
+-------------------------------------
+* data frame
+* aesthetic mappings
+* geoms
+* facets
+* stats (binning, quantiles, smoothing)
+* scales (color coding for factors)
+* a coordinate system
+
 Plotting with `qplot()` and `ggplot()`
 --------------------------------------
 Not unlike `plot()` in **{base}**, `qplot()` looks for data in a data fram.
