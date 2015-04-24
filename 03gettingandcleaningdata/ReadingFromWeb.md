@@ -60,7 +60,6 @@ We should use handles to use across authentication processes (through cookies). 
     pg1 = GET(handle = google, path = "/")
     pg2 = GET(handle = google, path = "search")
     
-Further Resources
------------------
+### Further Resources
 **{httr}** package: http://cran.r-project.org/web/packages/httr/httr.pdf  
 **R Bloggers** | Web scraping: http://www.r-bloggers.com/search/web+scraping
