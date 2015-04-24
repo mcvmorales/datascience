@@ -11,16 +11,20 @@ We will also be using the **{httr}** package.
 
 Accessing Twitter from R
 ------------------------
-    myapp = oauth_app("twitter", key = "consumerkey", secret = "consumersecret"
-    sig = sign_oauth1.0(myapp, token = "token", token_secret = "tokensecret")
-    homeTL = GET("https://api.twitter.com/1.1/statuses/home_timeline.json", sig)
-    
+```r
+myapp = oauth_app("twitter", key = "consumerkey", secret = "consumersecret"
+sig = sign_oauth1.0(myapp, token = "token", token_secret = "tokensecret")
+homeTL = GET("https://api.twitter.com/1.1/statuses/home_timeline.json", sig)
+```
+
 Use the **Resource URL** in the `GET` command.
     
 Converting the json Object
 --------------------------
-    json1 = content(homeTL) # extracts json data
-    json2 = jsonlite::fromJSON(toJSON(json1))
+```r
+json1 = content(homeTL) # extracts json data
+json2 = jsonlite::fromJSON(toJSON(json1))
+```
 
 The `content()` function extracts data and will automatically detect that it is in JSON format.
 Meanwhile, `json2[1, 1:4]` displays a data frame, showing the first row and the first four columns.
