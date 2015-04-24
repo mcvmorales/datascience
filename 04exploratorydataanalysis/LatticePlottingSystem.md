@@ -27,8 +27,10 @@ Lattice Functions
 
 Lattice functions take a formula for their first argument, usually of the form:
 
-    xyplot(y ~ x | f * g, data)
-    # "I want to look at the scatterplot of y on x, for every level f and g
+```r
+xyplot(y ~ x | f * g, data)
+# "I want to look at the scatterplot of y on x, for every level f and g
+```
 
 * `~` can be interpreted as "depends on" or "in relation to"
 * `y` represents the y-axis variable; `x` represents the x-axis variable
@@ -37,16 +39,20 @@ Lattice functions take a formula for their first argument, usually of the form:
 
 Simple Lattice Plots
 --------------------
-    library(lattice)
-    library(datasets)
-    xyplot(Ozone ~ Wind, data = airquality)
+```r
+library(lattice)
+library(datasets)
+xyplot(Ozone ~ Wind, data = airquality)
+```
 
-<img src = "https://github.com/mcvmorales/datascience/blob/master/04exploratorydataanalysis/figures/xyplot1.png">
+![1](https://github.com/mcvmorales/datascience/blob/master/04exploratorydataanalysis/figures/xyplot1.png)
 
-    airquality <- transform(airquality, Month = factor(Month)) # converts "Month" to factor variable
-    xyplot(Ozone ~ Wind | Month, data = airquality, layout = c(5, 1))
+```r
+airquality <- transform(airquality, Month = factor(Month)) # converts "Month" to factor variable
+xyplot(Ozone ~ Wind | Month, data = airquality, layout = c(5, 1))
+```
 
-<img src = "https://github.com/mcvmorales/datascience/blob/master/04exploratorydataanalysis/figures/xyplot2.png">
+![2](https://github.com/mcvmorales/datascience/blob/master/04exploratorydataanalysis/figures/xyplot2.png)
 
 Now we can observe the ozone versus the wind, month by month!
 
@@ -54,47 +60,56 @@ Lattice Behavior
 ----------------
 There are a few quirks to the **{lattice}** package:
 
-    p <- xyplot(Ozone ~ Wind, data = airquailty) # nothing happens
-    print(p) # plot is displayed
+```r
+p <- xyplot(Ozone ~ Wind, data = airquailty) # nothing happens
+print(p) # plot is displayed
+```
 
 Compare this situation to the following:
 
-    xyplot(Ozone ~ Wind, data = airquality) # plot auto-prints
-    
+```r
+xyplot(Ozone ~ Wind, data = airquality) # plot auto-prints
+```
+
 **{lattice}** graphics functions return an object of class *trellis*; on the command line, trellis 
 objects are auto-printed.
 
 The package also contains a `panel()` function, which controls the contents 
 inside each panel of the plot. For example:
 
-    set.seed(10)
-    x <- rnorm(100)
-    f <- rep(0:1, each = 50)
-    y <- x + f - f * x + rnorm(100, sd = 0.5)
-    f <- factor(f, labels = c("Group 1", "Group 2"))
-    xyplot (y ~ x | f, layout = c(2, 1)) # a 2 x 1 paneled plot
+```r
+set.seed(10)
+x <- rnorm(100)
+f <- rep(0:1, each = 50)
+y <- x + f - f * x + rnorm(100, sd = 0.5)
+f <- factor(f, labels = c("Group 1", "Group 2"))
+xyplot (y ~ x | f, layout = c(2, 1)) # a 2 x 1 paneled plot
+```
 
-<img src = "https://github.com/mcvmorales/datascience/blob/master/04exploratorydataanalysis/figures/xyplot3.png">
+![3](https://github.com/mcvmorales/datascience/blob/master/04exploratorydataanalysis/figures/xyplot3.png)
 
 Using the custom `panel` functions:
 
-    xyplot(y ~ x | f, panel = function(x, y, ...) {
-        panel.xyplot(x, y, ...)
-        panel.abline(h = median(y), lty = 2)
-    })
+```r
+xyplot(y ~ x | f, panel = function(x, y, ...) {
+    panel.xyplot(x, y, ...)
+    panel.abline(h = median(y), lty = 2)
+})
+```
 
-<img src = "https://github.com/mcvmorales/datascience/blob/master/04exploratorydataanalysis/figures/xyplot4.png">
+![4](https://github.com/mcvmorales/datascience/blob/master/04exploratorydataanalysis/figures/xyplot4.png)
 
 First, we call the default panel for `xyplot`. We then add a horizontal line at the median, of line
 type 2 (dashed line).
 
 We can also add a regression line. Note that `panel.lmline(x, y)` is equivalent to `panel.abline(lm(y ~ x)).`
 
-    xyplot(y ~ x | f, panel = function(x, y, ...) {
-        panel.xyplot(x, y, ...)
-        panel.lmline(x, y, col = 2)
-
-<img src = "https://github.com/mcvmorales/datascience/blob/master/04exploratorydataanalysis/figures/xyplot5.png">
+```r
+xyplot(y ~ x | f, panel = function(x, y, ...) {
+    panel.xyplot(x, y, ...)
+    panel.lmline(x, y, col = 2)
+```
+![5](https://github.com/mcvmorales/datascience/blob/master/04exploratorydataanalysis/figures/xyplot5.png)
 
 **{lattice}** plots are constructed with a single function call to a core lattice function.
 Aspects such as margins and spacing are already taken care of, with defaults usually sufficient.
@@ -102,10 +117,7 @@ The **{lattice}** system is ideal for creating conditioning plots (for observing
 simultaneously). Remember to use `panel` functions to modify what is plotted in each panel.
 
 ### Further Resources
-[{lattice} | CRAN] (http://cran.r-project.org/web/packages/lattice/lattice.pdf)
-
-[Line Style Arguments for R Graphics] (http://students.washington.edu/mclarkso/documents/line%20styles%20Ver2.pdf)
-
-[Lattice Graphs | Quick R] (http://www.statmethods.net/advgraphs/trellis.html)
-
-[Lattice: Multivariate Data Visualization with R] (http://www.springer.com/us/book/9780387759685)
+CRAN | **{lattice}**: http://cran.r-project.org/web/packages/lattice/lattice.pdf  
+Line Style Arguments for R Graphics: http://students.washington.edu/mclarkso/documents/line%20styles%20Ver2.pdf  
+Lattice Graphs: http://www.statmethods.net/advgraphs/trellis.html  
+Lattice: Multivariate Data Visualization with R: http://www.springer.com/us/book/9780387759685
