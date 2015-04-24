@@ -30,47 +30,57 @@ more capabilities than `qplot()`.
 Factors are important for indicating subsets of the data -- they should be labelled
 something descriptive/informative.
 
-    library(ggplot2)
-    str(mpg)
+```r
+library(ggplot2)
+str(mpg)
+```
     
 We should have a data frame of 234 observations with 11 variables.
 
-    # qplot(x-coord, y-coord, dataframe)
-    qplot(displ, hwy, data = mpg)
+```r
+# qplot(x-coord, y-coord, dataframe)
+qplot(displ, hwy, data = mpg)
+```
 
-<img src = "https://github.com/mcvmorales/datascience/blob/master/04exploratorydataanalysis/figures/ggplot1.png">
+![1](https://github.com/mcvmorales/datascience/blob/master/04exploratorydataanalysis/figures/ggplot1.png)
 
 Let's modify the aesthetics. Since our data has factors (four-wheel, rear-wheel, and front-wheel drive),
 we can include that information using a color code and legend that is created by the function automatically.
 
-    qplot(displ, hwy, data = mpg, color = drv)
+```r
+qplot(displ, hwy, data = mpg, color = drv)
+```
 
-<img src = "https://github.com/mcvmorales/datascience/blob/master/04exploratorydataanalysis/figures/ggplot2.png">
+![2](https://github.com/mcvmorales/datascience/blob/master/04exploratorydataanalysis/figures/ggplot2.png)
 
 Adding a geom:
-    
-    qplot(displ, hwy, data = mpg, geom = c("point", "smooth"))
-    
-<img src = "https://github.com/mcvmorales/datascience/blob/master/04exploratorydataanalysis/figures/ggplot3.png">
+
+```r    
+qplot(displ, hwy, data = mpg, geom = c("point", "smooth"))
+```
+
+![3](https://github.com/mcvmorales/datascience/blob/master/04exploratorydataanalysis/figures/ggplot3.png)
 
 We may also make histograms with `qplot()`.
 
-    qplot(hwy, data = mpg, fill = drv)
+```r
+qplot(hwy, data = mpg, fill = drv)
+```
 
-<img src = "https://github.com/mcvmorales/datascience/blob/master/04exploratorydataanalysis/figures/ggplot4.png">
+![4](https://github.com/mcvmorales/datascience/blob/master/04exploratorydataanalysis/figures/ggplot4.png)
 
 Facets, which are similar to panels in **{lattice}**, help to look at subsets in the data.
 Whatever is left of the `~` defines the rows; whatever is right of the `~` defines the columns.
 Observe:
 
-    qplot(displ, hwy, data = mpg, facets = . ~ drv)
+```r
+qplot(displ, hwy, data = mpg, facets = . ~ drv)
+```
     
-<img src = "https://github.com/mcvmorales/datascience/blob/master/04exploratorydataanalysis/figures/ggplot5.png">
+![5](https://github.com/mcvmorales/datascience/blob/master/04exploratorydataanalysis/figures/ggplot5.png)
 
-    qplot(hwy, data = mpg, facets = drv ~ ., binwidth = 2)
+```r
+qplot(hwy, data = mpg, facets = drv ~ ., binwidth = 2)
+```
 
-<img src = "https://github.com/mcvmorales/datascience/blob/master/04exploratorydataanalysis/figures/ggplot6.png">
-
-### Further Resources
-http://www.ggplot2.com  
-[Mouse Allergen and Ashthma Cohort Study (MAACS)] (http://goo.gl/WqE9j8)
+![6](https://github.com/mcvmorales/datascience/blob/master/04exploratorydataanalysis/figures/ggplot6.png)
