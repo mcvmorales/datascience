@@ -9,7 +9,7 @@ this idea and allows for high-density plots.
 
 The lattice plotting system is implemented using the following packages:
 * **{lattice}** contains code for producing Trellis graphics, which uses
-  functions such as `xyplot`, `bwplot`, and `levelplot`
+  functions such as `xyplot()`, `bwplot()`, and `levelplot()`
 * **{grid}**, on which the **{lattice}** package builds upon
 
 Both packages are independent of the **{base}** graphics system.
@@ -17,13 +17,13 @@ All plotting and annotation is done at once with a single function call.
 
 Lattice Functions
 -----------------
-* `xyplot`: the main function for creating scatterplots
-* `bwplot`: box-and-whiskers plots (or boxplots)
-* `histogram`: histograms
-* `stripplot`: similar to a boxplot, but with actual points
-* `dotplot`: points connected by lines
-* `splom`: scatterplot matrix (similar to `pairs` in **{base}**)
-* `levelplot`, `contourplot`: for plotting "image" data (i.e. maps)
+* `xyplot()`: the main function for creating scatterplots
+* `bwplot()`: box-and-whiskers plots (or boxplots)
+* `histogram()`: histograms
+* `stripplot()`: similar to a boxplot, but with actual points
+* `dotplot()`: points connected by lines
+* `splom()`: scatterplot matrix (similar to `pairs()` in **{base}**)
+* `levelplot()`, `contourplot()`: for plotting "image" data (i.e. maps)
 
 Lattice functions take a formula for their first argument, usually of the form:
 
