@@ -57,5 +57,5 @@ join_all(DFs)
 
 ### Further Resources
 [Merging Data | Quick-R] (http://statmethods.net/management/merging.html)  
-[{plyr}] (http://plyr.had.co.nz/)
+[{plyr}] (http://plyr.had.co.nz/)  
 [Join (SQL)] (http://en.wikipedia.org/wiki/Join_%28SQL%29)
