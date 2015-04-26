@@ -4,7 +4,7 @@ The goal of `run_analysis.R` is to demonstrate an ability to collect, work with,
 
 Description of the Data
 -----------------------
-From the README.md for the **Human Activity Recognition Using Smartphones Dataset (Version 1.0)**
+From the README.md for the **Human Activity Recognition Using Smartphones Dataset (Version 1.0)**:
 
 > The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (`WALKING`, `WALKING_UPSTAIRS`, `WALKING_DOWNSTAIRS`, `SITTING`, `STANDING`, `LAYING`) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
 
@@ -22,7 +22,7 @@ Variables
 The script `run_analysis.R` writes `tidydata.txt`, which contains a data frame of 10299 observations and 68 variables. The variables are:
 - `Subject`: a subject's ID number, between 1 and 30.
 - `Activity`: One of the six activities listed above (`WALKING` ... `LAYING`)
-- Various measurements (mean, standard deviation only; x-, y-, z-axis) with descriptive labels, i.e.: 
+- Various measurements, broken up by mean, standard deviation, and axis (where applicable):
   - `timeBodyAccelerometer`
   - `timeGravityAccelerometer`
   - `timeBodyAccelerometerJerk`
