@@ -22,7 +22,24 @@ Variables
 The script `run_analysis.R` writes `tidydata.txt`, which contains a data frame of 10299 observations and 68 variables. The variables are:
 - `Subject`: a subject's ID number, between 1 and 30.
 - `Activity`: One of the six activities listed above (`WALKING` ... `LAYING`)
-- 66 means and standard deviations of various measurements with descriptive labels
+- Various measurements (mean, standard deviation only; x-, y-, z-axis) with descriptive labels, i.e.: 
+  - `timeBodyAccelerometer`
+  - `timeGravityAccelerometer`
+  - `timeBodyAccelerometerJerk`
+  - `timeBodyGyroscope`
+  - `timeBodyGyroscopeJerk`
+  - `timeBodyAccelerometerMagnitude`
+  - `timeGravityAccelerometerMagnitude`       
+  - `timeBodyAccelerometerJerkMagnitude`
+  - `timeBodyGyroscopeMagnitude`
+  - `timeBodyGyroscopeJerkMagnitude`
+  - `frequencyBodyAccelerometer`
+  - `frequencyBodyAccelerometerJerk`
+  - `frequencyBodyGyroscope`
+  - `frequencyBodyAccelerometerMagnitude`
+  - `frequencyBodyAccelerometerJerkMagnitude`
+  - `frequencyBodyGyroscopeMagnitude`
+  - `frequencyBodyGyroscopeJerkMagnitude`
 
 Process
 -------
