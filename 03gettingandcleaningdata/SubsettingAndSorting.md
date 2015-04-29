@@ -151,4 +151,4 @@ Y <- cbind(X, rnorm(5))
 ```    
 
 ### Further Resources
-[Subsetting | Advanced R[ (http://adv-r.had.co.nz/Subsetting.html)
+[Subsetting | Advanced R] (http://adv-r.had.co.nz/Subsetting.html)
