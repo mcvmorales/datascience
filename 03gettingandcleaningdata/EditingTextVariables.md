@@ -63,7 +63,7 @@ We can also use `sub()` and/or `gsub()`.
 > sub("_", "", testName)  # replaces only the first _
 [1] "thisis_a_test"
 
-> sub("_", "", testName)  # replaces all _
+> gsub("_", "", testName)  # replaces all _
 [1] "thisisatest"
 ```
 
