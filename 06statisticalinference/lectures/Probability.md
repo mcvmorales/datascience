@@ -41,3 +41,29 @@ Quantiles
 Suppose we were the 95th percentile on an exam. Then 95% of those who took the exam performed worse than us, and 5% of those who took the exam performed better than us. These are sample quantiles.
 
 A **percentile** is simply a quantile expressed as a percent; the **median** is the 50th percentile.
+
+Conditional Probability
+-----------------------
+Let *B* be an event so that *P*(*B*) > 0. Then the probability of event *A*, given that *B* has occurred, is:
+
+<img src = "http://upload.wikimedia.org/math/8/6/9/8694e4193ba45b55403595096b7d23c5.png">
+
+**Bayes' rule** is perhaps the most well-known use of conditional probaility. Bayes' rule allows us to reverse the role of the conditioning set and the set of which we want the proability. This is useful in diagnostic tests.
+
+<img src = "http://upload.wikimedia.org/math/d/3/c/d3c7c452b3d01f5415dd9bf15d2ab822.png">
+
+Or:
+
+<img src = "http://upload.wikimedia.org/math/b/d/7/bd72cf0e5abae5ef0885ace7c1f29be5.png">
+
+Independence
+------------
+Event *A* is independent of event *B* if *P*(*A*|*B*) = *P*(*A*) where *P*(*B*) > 0. Similarly, *A* is independent of *B* if *P*(*A*∩*B*) = *P*(*A*)*P*(*B*). 
+
+IID Random Variables
+--------------------
+Random variables are said to be **IID** if they are **independent** and **identically distributed**.
+* independent: statistically unrelated from one another
+* identically distributed: all having been drawn from the same population distribution
+
+IID random variables are the default model for random samples.
