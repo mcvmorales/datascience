@@ -54,7 +54,7 @@ They can also have names, which is useful for making graphics:
     # Insert R code here
     ```
 
-When a code in a code chunk is echoed, the computation will display; otherwise, use the argument `echo = FALSE` in the `{r}` tag of the code chunk. If for some reason we do not want to display the results of some computation, we can may say `results = hide`.
+When a code in a code chunk is echoed, the computation will display; otherwise, use the option `echo = FALSE` in the `{r}` tag of the code chunk. If for some reason we do not want to display the results of some computation, we can may say `results = hide`.
 
 Inline text computations can be performed using the backtick (`).
 
