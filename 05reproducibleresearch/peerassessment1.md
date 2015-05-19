@@ -108,9 +108,9 @@ Create a graph of the total number of steps taken each day.
 ```r
 with(steps.tot, {
         par(cex = 0.7, las = 2, oma = c(2, 0, 0, 0), mgp = c(4, 1, 0), mar = c(7, 7, 2, 0))
-        barplot(height = steps, main = "Total Number of Steps Taken Each Day (with NA)",
-                xlab = "Date", names.arg = date, font = 1,
-                ylab = "Number of Steps", col = "orange", space = 0.5)
+        barplot(height = steps, main = "Total Number of Steps Taken Each Day (with NA)", 
+                names.arg = date, col = "orange", space = 0.5, 
+                xlab = "Date", ylab = "Number of Steps")
 })
 ```
 
@@ -147,8 +147,7 @@ Make a time series plot of the 5-minute interval (x-axis) and the average number
 ```r
 daily.avg <- aggregate(steps ~ invls, FUN = mean)
 with(daily.avg, {
-        par(cex = 0.7, las = 2, oma = c(2, 0, 0, 0), mgp = c(4, 1, 0), mar = c(7, 7, 2, 0))
-        plot(daily.avg, type = "l", main = "Average Daily Activity",
+        plot(daily.avg, type = "l", las = 1, main = "Average Daily Activity", 
              xlab = "Interval", ylab = "Steps")
 })
 ```
@@ -341,7 +340,7 @@ Credits
 
 ```
 ## [1] "Maria Celestina Morales"  "Coursera | repdata-014"  
-## [3] "Sun May 17 05:45:50 2015"
+## [3] "Tue May 19 00:38:53 2015"
 ```
 
 [1]: https://www.coursera.org/specialization/jhudatascience/1
