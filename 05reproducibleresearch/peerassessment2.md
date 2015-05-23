@@ -1,9 +1,8 @@
 Impact of Natural Disasters on US Population and Economy, 1950-2012
 ===================================================================
 
-**Author**: Maria Celestina Morales  
+**Author**: Maria Celestina Morales -- http://rpubs.com/mcvmorales/repdata-pa2  
 **Date**: May 2015
-
 
 ```
 ## R version 3.1.3 (2015-03-09)
