@@ -27,7 +27,7 @@ Cons:
 
 {knitr}
 -------
-Written by Yihui Xie, **{kntir}** is a package (available on CRAN) that supports RMarkdown, LaTeX, and HTML as documentation languages. It can export documents in both PDF and HTML formats. RStudio already has this package built in.
+Written by Yihui Xie, **{knitr}** is a package (available on CRAN) that supports RMarkdown, LaTeX, and HTML as documentation languages. It can export documents in both PDF and HTML formats. RStudio already has this package built in.
 
 **{knitr}** is great for manuals, short/medium-length technical documents, tutorials, periodic reports, and data preprocessing documents/summaries. It is not, however, ideal for very long research articles, copmlex time-consuming computations, or documents that require precise-formatting.
 
